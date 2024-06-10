@@ -13,7 +13,7 @@ function Write({boardId, handleCancel, isModifyMode}){
   const navigate = useNavigate();
 
   let write = () =>{
-    Axios.post('http://34.47.83.38:8000/insert',{
+    Axios.post('http://localhost:8000/insert',{
       title: form.title,
       content: form.content
     })
@@ -27,7 +27,7 @@ function Write({boardId, handleCancel, isModifyMode}){
   }
 
   let update = () =>{
-    Axios.post('http://34.47.83.38:8000/update',{
+    Axios.post('http://localhost:8000/update',{
       id:boardId,
       title: form.title,
       content: form.content
@@ -48,7 +48,7 @@ function Write({boardId, handleCancel, isModifyMode}){
   }
 
   let detail = () =>{
-    Axios.get(`http://34.47.83.38:8000/detail?id=${boardId}`)
+    Axios.get(`http://localhost:8000/detail?id=${boardId}`)
     .then( res => {
       if(res.data.length > 0){
         setForm({
