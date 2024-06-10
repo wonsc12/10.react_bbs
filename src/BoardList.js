@@ -12,7 +12,7 @@ function BoardList(props){
   const navigate = useNavigate();
 
   let getList = () =>{
-    Axios.get('http://34.47.83.38:8000/list')
+    Axios.get('http://localhost:8000/list')
     .then( res => {
       //const data = res.data;
       const {data} = res;
@@ -77,7 +77,7 @@ function BoardList(props){
       boardIdList += `'${item}',`;
     });
     console.log(boardIdList);
-    Axios.post('http://34.47.83.38:8000/delete',{
+    Axios.post('http://localhost:8000/delete',{
       boardIdList : boardIdList.substring(0, boardIdList.length -1)
     })
     .then( res => {
